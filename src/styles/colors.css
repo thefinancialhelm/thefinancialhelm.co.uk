@@ -1,0 +1,103 @@
+/**
+ * The Financial Helm Brand Colour System
+ * HSL-based design tokens for consistent colour usage
+ */
+
+:root {
+  /* Core Brand Colours - From brand guidelines */
+  --brand-navy: 207 68% 9%;        /* #05192A */
+  --brand-gold: 37 45% 58%;        /* #CA9E5D */
+  --brand-gold-light: 37 45% 72%;  /* #D9B57F */
+  --brand-cream: 37 40% 92%;       /* #F5F1E8 */
+
+  /* Surface Colours - Backgrounds and containers */
+  --surface-primary: 0 0% 100%;      /* Pure white */
+  --surface-secondary: 37 40% 96%;   /* Warm off-white */
+  --surface-tertiary: 37 35% 88%;    /* Light warm grey */
+  --surface-accent: 37 45% 58%;      /* Brand gold */
+  --surface-inverse: 207 68% 9%;     /* Brand navy */
+
+  /* Content Colours - Text and foreground elements */
+  --content-primary: 215 25% 27%;    /* Dark charcoal for main text */
+  --content-secondary: 215 16% 35%;  /* Medium grey for secondary text */
+  --content-tertiary: 215 14% 63%;   /* Light grey for muted text */
+  --content-accent: 37 45% 58%;      /* Brand gold for highlights */
+  --content-inverse: 0 0% 100%;      /* White text on dark backgrounds */
+
+  /* Interactive Colours - Buttons, links, and interactive elements */
+  --interactive-primary: 37 45% 58%;      /* Brand gold - main CTAs */
+  --interactive-primary-hover: 37 45% 52%; /* Darker gold on hover */
+  --interactive-primary-active: 37 45% 46%; /* Even darker on click */
+  
+  --interactive-secondary: 210 29% 39%;     /* Steel blue - secondary actions */
+  --interactive-secondary-hover: 210 29% 33%; /* Darker steel blue */
+  --interactive-secondary-active: 210 29% 27%; /* Darkest steel blue */
+  
+  --interactive-link: 210 29% 39%;         /* Steel blue for links */
+  --interactive-link-hover: 37 45% 58%;    /* Gold on link hover */
+  --interactive-link-visited: 210 29% 33%; /* Darker blue for visited */
+
+  /* Border Colours - Separators and outlines */
+  --border-light: 220 13% 91%;      /* Very light grey */
+  --border-medium: 220 13% 69%;     /* Medium grey */
+  --border-strong: 215 14% 63%;     /* Stronger grey */
+  --border-accent: 37 45% 58%;      /* Brand gold for emphasis */
+  --border-interactive: 210 29% 39%; /* Steel blue for form elements */
+
+  /* Semantic Colours - Status and feedback */
+  --semantic-success: 142 71% 45%;   /* Forest green */
+  --semantic-warning: 45 93% 47%;    /* Amber */
+  --semantic-error: 348 83% 47%;     /* Controlled red */
+  --semantic-info: 213 94% 68%;      /* Professional blue */
+
+  /* Shadow and Overlay Colours - With alpha channels */
+  --shadow-subtle: 215 25% 27%;      /* Use with low opacity */
+  --shadow-medium: 215 25% 27%;      /* Use with medium opacity */
+  --shadow-strong: 207 68% 9%;       /* Use with higher opacity */
+  
+  --overlay-light: 37 45% 58%;       /* Gold overlay for highlights */
+  --overlay-medium: 207 68% 9%;      /* Navy overlay for modals */
+  --overlay-dark: 215 25% 27%;       /* Dark overlay for emphasis */
+}
+
+/* Dark mode overrides (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-primary: 207 68% 9%;
+    --surface-secondary: 207 68% 12%;
+    --surface-tertiary: 207 68% 15%;
+    
+    --content-primary: 0 0% 95%;
+    --content-secondary: 0 0% 80%;
+    --content-tertiary: 0 0% 65%;
+  }
+}
+
+/* Utility classes for common patterns */
+.surface-glass {
+  background: hsla(var(--surface-primary) / 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid hsla(var(--border-light) / 0.5);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, 
+    hsl(var(--brand-gold)), 
+    hsl(var(--brand-gold-light))
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shadow-brand {
+  box-shadow: 
+    0 1px 3px hsla(var(--shadow-subtle) / 0.12),
+    0 1px 2px hsla(var(--shadow-subtle) / 0.24);
+}
+
+.shadow-brand-lg {
+  box-shadow: 
+    0 10px 15px -3px hsla(var(--shadow-medium) / 0.1),
+    0 4px 6px -2px hsla(var(--shadow-medium) / 0.05);
+}

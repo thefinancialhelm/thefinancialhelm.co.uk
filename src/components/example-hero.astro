@@ -1,0 +1,152 @@
+---
+// Example component demonstrating the new colour system
+interface Props {
+  title: string;
+  description: string;
+  ctaText: string;
+  ctaHref: string;
+}
+
+const { title, description, ctaText, ctaHref } = Astro.props;
+---
+
+<!-- Example Hero Section using the new colour system -->
+<section class="bg-surface-primary py-20">
+  <div class="max-w-4xl mx-auto px-6">
+    
+    <!-- Hero Content -->
+    <div class="text-center space-y-6">
+      
+      <!-- Main Heading with gradient text -->
+      <h1 class="text-4xl md:text-6xl font-bold">
+        <span class="text-content-primary">Take Control of Your</span>
+        <br>
+        <span class="text-gradient-gold">Financial Operations</span>
+      </h1>
+      
+      <!-- Supporting Text -->
+      <p class="text-xl text-content-secondary max-w-2xl mx-auto leading-relaxed">
+        {description}
+      </p>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+        
+        <!-- Primary CTA -->
+        <a 
+          href={ctaHref}
+          class="
+            bg-interactive-primary 
+            hover:bg-interactive-primary-hover 
+            active:bg-interactive-primary-active
+            text-content-inverse
+            px-8 py-4 
+            rounded-lg 
+            shadow-brand
+            hover:shadow-brand-lg
+            transition-all duration-200
+            font-semibold
+            text-lg
+          "
+        >
+          {ctaText}
+        </a>
+        
+        <!-- Secondary CTA -->
+        <a 
+          href="/about"
+          class="
+            bg-interactive-secondary 
+            hover:bg-interactive-secondary-hover
+            text-content-inverse
+            px-8 py-4 
+            rounded-lg 
+            shadow-brand
+            transition-all duration-200
+            font-semibold
+            text-lg
+          "
+        >
+          Learn More
+        </a>
+        
+      </div>
+      
+    </div>
+    
+    <!-- Feature Cards -->
+    <div class="grid md:grid-cols-3 gap-6 mt-16">
+      
+      <div class="
+        bg-surface-secondary 
+        border border-border-light 
+        rounded-lg 
+        shadow-brand
+        hover:shadow-brand-lg
+        p-6
+        transition-all duration-200
+      ">
+        <h3 class="text-content-primary text-xl font-semibold mb-3">
+          Financial Operations Review
+        </h3>
+        <p class="text-content-secondary mb-4">
+          Deep-dive analysis of your workflows with clear roadmap for scale.
+        </p>
+        <a 
+          href="/services" 
+          class="text-interactive-link hover:text-interactive-link-hover font-medium"
+        >
+          Learn more →
+        </a>
+      </div>
+      
+      <div class="
+        bg-surface-secondary 
+        border border-border-light 
+        rounded-lg 
+        shadow-brand
+        hover:shadow-brand-lg
+        p-6
+        transition-all duration-200
+      ">
+        <h3 class="text-content-primary text-xl font-semibold mb-3">
+          Systems Implementation
+        </h3>
+        <p class="text-content-secondary mb-4">
+          We build the robust processes your growing business needs.
+        </p>
+        <a 
+          href="/services" 
+          class="text-interactive-link hover:text-interactive-link-hover font-medium"
+        >
+          Learn more →
+        </a>
+      </div>
+      
+      <div class="
+        bg-surface-secondary 
+        border border-border-light 
+        rounded-lg 
+        shadow-brand
+        hover:shadow-brand-lg
+        p-6
+        transition-all duration-200
+      ">
+        <h3 class="text-content-primary text-xl font-semibold mb-3">
+          Managed Operations
+        </h3>
+        <p class="text-content-secondary mb-4">
+          Full ownership of your bookkeeping, VAT, accounts, and payroll.
+        </p>
+        <a 
+          href="/services" 
+          class="text-interactive-link hover:text-interactive-link-hover font-medium"
+        >
+          Learn more →
+        </a>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>

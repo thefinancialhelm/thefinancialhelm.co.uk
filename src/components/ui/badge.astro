@@ -1,0 +1,24 @@
+---
+interface Props {
+  color?: Color;
+  class?: string;
+}
+
+const { color = "DEFAULT", class: className } = Astro.props;
+
+const colors = {
+  DEFAULT: "bg-surface-secondary border-border-light border text-content-primary",
+  gold: "bg-brand-gold/10 border-brand-gold/20 border text-brand-gold",
+  navy: "bg-brand-navy/10 border-brand-navy/20 border text-brand-navy",
+};
+type Color = keyof typeof colors;
+---
+
+<span
+  class:list={[
+    colors[color],
+    className,
+    "rounded-full text-xs font-medium px-3 py-1 ",
+  ]}>
+  <slot />
+</span>

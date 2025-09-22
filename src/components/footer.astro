@@ -1,0 +1,169 @@
+---
+import Container from "@components/container.astro";
+import { Icon } from "astro-icon/components";
+
+const { margin } = Astro.props;
+
+const footermenu = {
+  company: [
+    {
+      title: "About",
+      path: "/about",
+    },
+    {
+      title: "Careers",
+      path: "#",
+    },
+    {
+      title: "Blog",
+      path: "/blog",
+    },
+    {
+      title: "Contact",
+      path: "/contact",
+    },
+  ],
+  product: [
+    {
+      title: "For Startups",
+      path: "#",
+    },
+    {
+      title: "Features",
+      path: "#",
+    },
+    {
+      title: "Pricing",
+      path: "/pricing",
+    },
+    {
+      title: "Integrations",
+      path: "#",
+    },
+  ],
+  resources: [
+    {
+      title: "Help Center",
+      path: "#",
+    },
+    {
+      title: "Guides",
+      path: "#",
+    },
+    {
+      title: "Documentation",
+      path: "#",
+    },
+    {
+      title: "Uptime Status",
+      path: "#",
+    },
+  ],
+};
+---
+
+<footer
+  class:list={[
+    "py-14 bg-surface-secondary border-t border-border-light",
+    margin && "mt-10",
+  ]}>
+  <Container>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div class="sm:col-span-2 md:col-span-3 lg:col-span-2">
+        <a href="/" class="text-lg flex items-center"
+          ><span class="font-bold text-brand-navy">The Financial</span><span
+            class="text-brand-gold font-bold"> Helm</span
+          >
+        </a>
+        <p class="mt-4 text-sm text-content-secondary max-w-xs">
+          The Financial Helm builds scalable financial operations that grow with your business. From CFO services to intelligent automation.
+        </p>
+        <div class="flex gap-3 mt-4 items-center">
+          <a
+            href="https://twitter.com/surjithctly"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-surface-tertiary hover:bg-surface-primary rounded w-6 h-6 inline-flex items-center justify-center text-content-secondary">
+            <Icon name="bx:bxl-twitter" class="w-4 h-4" />
+            <span class="sr-only">Twitter or X</span></a
+          >
+          <a
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-surface-tertiary hover:bg-surface-primary rounded w-6 h-6 inline-flex items-center justify-center text-content-secondary">
+            <Icon name="bx:bxl-facebook-circle" class="w-4 h-4" /><span
+              class="sr-only">Facebook</span
+            ></a
+          >
+          <a
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-surface-tertiary hover:bg-surface-primary rounded w-6 h-6 inline-flex items-center justify-center text-content-secondary">
+            <Icon name="bx:bxl-linkedin-square" class="w-4 h-4" /><span
+              class="sr-only">Linkedin</span
+            ></a
+          >
+        </div>
+      </div>
+      <div>
+        <h3 class="font-medium text-sm text-content-primary">Company</h3>
+        <div class="flex flex-col mt-3">
+          {
+            footermenu.company.map((item) => (
+              <a
+                href={item.path || "#"}
+                class="py-2 text-sm text-content-secondary hover:text-interactive-primary">
+                {item.title}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+      <div>
+        <h3 class="font-medium text-sm text-content-primary">Product</h3>
+        <div class="flex flex-col mt-3">
+          {
+            footermenu.product.map((item) => (
+              <a
+                href={item.path || "#"}
+                class="py-2 text-sm text-content-secondary hover:text-interactive-primary">
+                {item.title}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+      <div>
+        <h3 class="font-medium text-sm text-content-primary">Resources</h3>
+        <div class="flex flex-col mt-3">
+          {
+            footermenu.resources.map((item) => (
+              <a
+                href={item.path || "#"}
+                class="py-2 text-sm text-content-secondary hover:text-interactive-primary">
+                {item.title}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </Container>
+
+  <div class="mt-14 pt-8 px-5 border-t border-border-light">
+    <Container>
+      <p class="text-center text-sm text-content-secondary [text-wrap:balance]">
+        Copyright © {new Date().getFullYear()} The Financial Helm. All rights reserved.
+      </p>
+      <p class="text-center text-xs text-content-secondary mt-2">
+        <a href="/terms" class="hover:text-interactive-primary"> Terms</a> ・ <a
+          href="/privacy"
+          class="hover:text-interactive-primary">
+          Privacy</a
+        >
+      </p>
+    </Container>
+  </div>
+</footer>

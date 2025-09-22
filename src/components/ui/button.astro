@@ -1,0 +1,39 @@
+---
+interface Props {
+  size?: "md" | "lg";
+  block?: boolean;
+  style?: "outline" | "primary"; // "inverted"
+  class?: string;
+  [x: string]: any;
+}
+
+const {
+  size = "md",
+  style = "primary",
+  block,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const sizes = {
+  md: "px-5 py-2.5",
+  lg: "px-6 py-3",
+};
+
+const styles = {
+  outline: "border-2 border-interactive-primary hover:bg-surface-secondary text-interactive-primary hover:text-interactive-primary-hover",
+  primary: "bg-interactive-primary text-content-inverse hover:bg-interactive-primary-hover border-2 border-transparent",
+};
+---
+
+<button
+  {...rest}
+  class:list={[
+    "rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-interactive-primary",
+    block && "w-full",
+    sizes[size],
+    styles[style],
+    className,
+  ]}
+  ><slot />
+</button>

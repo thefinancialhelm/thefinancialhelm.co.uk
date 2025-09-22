@@ -1,0 +1,56 @@
+---
+import { Picture } from "astro:assets";
+import heroImage from "../assets/hero-screenshot.png";
+import Link from "@components/ui/link.astro";
+import Container from "@components/container.astro";
+---
+
+<div class="overflow-x-clip">
+  <Container>
+    <main class="grid lg:grid-cols-5 place-items-center relative">
+      <div
+        class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-brand-gold/20 right-0 top-0">
+      </div>
+      <div
+        class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-brand-navy/10 right-56 top-10">
+      </div>
+
+      <div class="max-w-sm md:max-w-max lg:col-span-2">
+        <h1
+          class="text-3xl lg:text-4xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter [text-wrap:balance] text-center lg:text-start text-content-primary">
+          Take Control of Your <span class="text-brand-gold">Financial Operations</span>
+        </h1>
+        <p
+          class="text-lg mt-4 max-w-lg text-content-secondary [text-wrap:balance] text-center lg:text-start">
+          Stop letting broken processes dictate your potential. The Financial Helm builds scalable financial operations that grow with your business.
+        </p>
+        <div
+          class="mt-6 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-3">
+          <Link
+            href="/contact"
+            class="flex gap-1 items-center justify-center">
+            Book Your Financial Operations Review
+          </Link>
+          <Link
+            size="lg"
+            style="outline"
+            href="/about"
+            class="flex gap-1 items-center justify-center">
+            Learn More
+          </Link>
+        </div>
+      </div>
+      <div class="py-3 lg:col-span-3 lg:-mr-44">
+        <Picture
+          src={heroImage}
+          alt="Astronaut in the air"
+          formats={["avif", "webp"]}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          widths={[240, 540, 720, heroImage.width]}
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </main>
+  </Container>
+</div>

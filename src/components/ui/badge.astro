@@ -7,8 +7,8 @@ interface Props {
 const { color = "DEFAULT", class: className } = Astro.props;
 
 const colors = {
-  DEFAULT: "bg-surface-secondary border-border-light border text-content-primary",
-  gold: "bg-brand-gold/10 border-brand-gold/20 border text-brand-gold",
+  DEFAULT: "bg-surface-tertiary border-border-light border text-content-primary",
+  gold: "bg-brand-gold/10 border-brand-gold/20 border text-brand-gold-text",
   navy: "bg-brand-navy/10 border-brand-navy/20 border text-brand-navy",
 };
 type Color = keyof typeof colors;

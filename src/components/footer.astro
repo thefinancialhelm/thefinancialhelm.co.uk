@@ -72,7 +72,7 @@ const footermenu = {
       <div class="sm:col-span-2 md:col-span-3 lg:col-span-2">
         <a href="/" class="text-lg flex items-center"
           ><span class="font-bold text-brand-navy">The Financial</span><span
-            class="text-brand-gold font-bold"> Helm</span
+            class="text-brand-gold-text font-bold"> Helm</span
           >
         </a>
         <p class="mt-4 text-sm text-content-secondary max-w-xs">
@@ -114,7 +114,7 @@ const footermenu = {
             footermenu.company.map((item) => (
               <a
                 href={item.path || "#"}
-                class="py-2 text-sm text-content-secondary hover:text-interactive-primary">
+                class="py-2 text-sm text-content-secondary hover:text-brand-gold-text">
                 {item.title}
               </a>
             ))
@@ -128,7 +128,7 @@ const footermenu = {
             footermenu.product.map((item) => (
               <a
                 href={item.path || "#"}
-                class="py-2 text-sm text-content-secondary hover:text-interactive-primary">
+                class="py-2 text-sm text-content-secondary hover:text-brand-gold-text">
                 {item.title}
               </a>
             ))
@@ -142,7 +142,7 @@ const footermenu = {
             footermenu.resources.map((item) => (
               <a
                 href={item.path || "#"}
-                class="py-2 text-sm text-content-secondary hover:text-interactive-primary">
+                class="py-2 text-sm text-content-secondary hover:text-brand-gold-text">
                 {item.title}
               </a>
             ))
@@ -158,9 +158,9 @@ const footermenu = {
         Copyright © {new Date().getFullYear()} The Financial Helm. All rights reserved.
       </p>
       <p class="text-center text-xs text-content-secondary mt-2">
-        <a href="/terms" class="hover:text-interactive-primary"> Terms</a> ・ <a
+        <a href="/terms" class="hover:text-brand-gold-text"> Terms</a> ・ <a
           href="/privacy"
-          class="hover:text-interactive-primary">
+          class="hover:text-brand-gold-text">
           Privacy</a
         >
       </p>

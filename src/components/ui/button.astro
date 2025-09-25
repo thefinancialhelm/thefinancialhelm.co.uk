@@ -21,7 +21,7 @@ const sizes = {
 };
 
 const styles = {
-  outline: "border-2 border-interactive-primary hover:bg-surface-secondary text-interactive-primary hover:text-interactive-primary-hover",
+  outline: "border-2 border-brand-gold-text hover:bg-surface-secondary text-brand-gold-text",
   primary: "bg-interactive-primary text-content-inverse hover:bg-interactive-primary-hover border-2 border-transparent",
 };
 ---
@@ -29,7 +29,7 @@ const styles = {
 <button
   {...rest}
   class:list={[
-    "rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-interactive-primary",
+    "rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-brand-gold-text",
     block && "w-full",
     sizes[size],
     styles[style],

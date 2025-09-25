@@ -16,7 +16,7 @@ const { title, lastItem, children } = Astro.props;
 <li class="relative z-50 isolate">
   <NavDropdown class="group">
     <button
-      class="flex items-center gap-1 text-sm w-full lg:w-auto transition lg:px-3 py-2 text-content-secondary hover:text-interactive-primary focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-interactive-primary focus-visible:outline-none rounded-full">
+      class="flex items-center gap-1 text-sm w-full lg:w-auto transition lg:px-3 py-2 text-content-secondary hover:text-brand-gold-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-gold-text focus-visible:outline-none rounded-full">
       <span>{title}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ const { title, lastItem, children } = Astro.props;
             children.map((item) => (
               <a
                 href={item.path}
-                class="py-1  text-sm text-content-secondary hover:text-interactive-primary focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-interactive-primary focus-visible:outline-none rounded">
+                class="py-1  text-sm text-content-secondary hover:text-brand-gold-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-gold-text focus-visible:outline-none rounded">
                 {item.title}
               </a>
             ))

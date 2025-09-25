@@ -12,6 +12,5 @@ export default defineConfig({
     domains: ["unsplash.com", "images.unsplash.com"],
   },
   integrations: [tailwind(), mdx(), icon(), sitemap()],
-  output: "hybrid",
   adapter: netlify(),
 });

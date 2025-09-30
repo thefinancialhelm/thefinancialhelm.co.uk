@@ -1,0 +1,177 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import { Icon } from "astro-icon/components";
+
+const challenges = [
+  {
+    name: "Reconciling Complex Payouts",
+    description:
+      "We untangle the data from Shopify Payments, Stripe, PayPal, and others, accurately accounting for platform fees, refunds, and chargebacks so you have a true picture of your cash received.",
+    icon: "ph:invoice"
+  },
+
+  {
+    name: "Mastering Inventory and COGS",
+    description:
+      "We build systems to accurately track Cost of Goods Sold (COGS), including shipping and landed costs, giving you a real-time, accurate view of your gross profit margins on every product you sell.",
+    icon: "ph:package",
+  },
+
+  {
+    name: "Taming Buy Now, Pay Later (BNPL)",
+    description:
+      "Klarna, Clearpay, and other BNPL services create reconciliation headaches. We streamline this process, ensuring your books are always accurate and your cash flow is clear.",
+    icon: "ph:shopping-bag"
+  },
+
+  {
+    name: "Automating High-Volume Payments",
+    description:
+      "Stop wasting hours on manual supplier payment runs constrained by daily bank limits. We implement systems that allow for secure, efficient, one-click batch payments.",
+    icon: "ph:bank",
+  },
+
+  {
+    name: "Navigating Multi-Currency",
+    description: "Selling internationally is a huge growth opportunity, but it creates financial complexity. We manage multi-currency transactions, ensuring that you have the full financial picture.",
+    icon: "ph:currency-dollar"
+  },
+
+  {
+    name: "Integrating Your Tech Stack",
+    description: "From your sales channels (Shopify, Amazon) to your inventory management software, we ensure your financial data flows seamlessly, creating a single, reliable source of truth for your business.",
+    icon: "ph:network"
+  }
+];
+---
+
+<Layout
+  footerMargin={false}
+  title="Financial Operations, Purpose-Built for Ecommerce"
+  description="Expert financial operations for UK ecommerce businesses. We master complex payouts, inventory, BNPL, multi-currency, and tech stack integration for scaling D2C brands."
+>
+  <Container class="mt-16">
+    <Sectionhead>
+      <Fragment slot="title">Financial Operations,<span class="bold text-brand-gold-text block">Purpose-Built for Ecommerce</span></Fragment>
+      <Fragment slot="desc">
+        <div class="max-w-3xl mx-auto">
+          <p class="text-lg text-content-primary font-bold">A generalist accountant sees 'sales'. We see Shopify payouts, Klarna
+            fees, landed inventory costs, and the complex path to your true net profit.</p>
+          <p class="text-content-primary mt-4 text-left">Your business isn't a traditional company with a website tacked on. It's a
+            dynamic digital ecosystem of platforms, payment gateways, and international customers. We're not accountants
+            who are 'learning' ecommerce on the side; our practice was built from the ground up to master its unique
+            financial complexities and help you scale without the chaos.</p>
+        </div>
+      </Fragment>
+    </Sectionhead>
+  </Container>
+
+  <div class="bg-surface-secondary py-16 my-16">
+    <Container>
+      <Sectionhead>
+        <Fragment slot="title">Your Headaches, Our Expertise</Fragment>
+        <Fragment slot="desc">
+          We replace manual workarounds and financial uncertainty with streamlined systems that give you clarity. We
+          specialise in:
+        </Fragment>
+      </Sectionhead>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 my-24 gap-x-10 gap-y-16">
+        {
+          challenges.map((challenge) => (
+            <div
+              class="rounded-2xl relative flex items-center flex-col p-6 pt-12 group bg-surface-primary transition ring-2 ring-border-light shadow hover:ring-border-interactive hover:shadow-md">
+              <div
+                class="ring-2 ring-border-light w-16 h-16 group-hover:ring-border-interactive transition shadow shadow-surface-secondary rounded-lg grid place-items-center -mt-20 bg-surface-primary">
+                <Icon name={challenge.icon} class="w-10 h-10 text-brand-gold" />
+              </div>
+
+              <h3 class="text-xl lg:text-2xl font-medium mt-4 text-center text-content-primary">{challenge.name}</h3>
+              <p class="text-content-secondary mt-2 [text-wrap:balance]">
+                {challenge.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </Container>
+  </div>
+
+  <Container class="pb-16">
+    <Sectionhead>
+      <Fragment slot="title">We're a Perfect Fit If...</Fragment>
+      <Fragment slot="desc">
+        <div class="max-w-3xl mx-auto">
+          <p class="text-content-primary font-bold">We build the most effective partnerships with ambitious business
+            owners who recognise the need for a robust operational foundation.</p>
+          <h2 class="text-content-primary text-lg font-bold mt-8 text-left">Your Business</h2>
+          <ul class="grid mt-4 text-left gap-y-4">
+            <li class="flex items-center gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+              <span>Is an established UK-based ecommerce brand</span>
+            </li>
+
+            <li class="flex items-center gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+              <span>Has a turnover between £500,000 and £8 million</span>
+            </li>
+
+            <li class="flex items-center gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+              <span>Sells physical products directly to consumers (D2C)</span>
+            </li>
+
+            <li class="flex items-center gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+              <span>Is feeling the operational strain of growth ("creeping chaos")</span>
+            </li>
+
+            <li class="flex items-center gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+              <span>Is ready to invest in systems that will enable future scale</span>
+            </li>
+          </ul>
+          <h2 class="text-content-primary text-lg font-bold mt-8 text-left">You, the Founder</h2>
+          <ul class="grid mt-4 text-left gap-y-4">
+            <li class="flex items-center gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+              <span>Are still heavily involved in the day-to-day financial approvals</span>
+            </li>
+
+            <li class="flex items-center gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+              <span>Find yourself spending more time in the business than on it</span>
+            </li>
+
+            <li class="flex items-center gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+              <span>Value clarity, efficiency, and expert advice</span>
+            </li>
+
+            <li class="flex items-center gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+              <span>View your finance function as a strategic engine for growth, not just a compliance checkbox</span>
+            </li>
+          </ul>
+          <p class="text-content-primary mt-8 text-lg">If this page resonates with you, you are not alone, and your challenges are
+            solvable. Let's have a conversation about the specific operational hurdles you're facing and how we can help
+            you build a financial engine that's ready for your ambition.</p>
+        </div>
+      </Fragment>
+    </Sectionhead>
+  </Container>
+
+  <Cta />
+</Layout>

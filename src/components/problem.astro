@@ -1,0 +1,130 @@
+---
+import { Picture } from "astro:assets";
+import FeatureImg1 from "../assets/home-growth-chaos.jpg";
+import FeatureImg2 from "../assets/home-financial-engine.jpg";
+import FeatureImg3 from "../assets/home-admin-to-founder.jpg";
+import Link from "@components/ui/link.astro";
+import Container from "@components/container.astro";
+import Card from "@components/card.astro";
+
+const { nomargin } = Astro.props;
+---
+<div class="bg-surface-secondary py-16 my-16">
+  <Container>
+    <div
+      class:list={[
+        "max-w-4xl mx-auto flex flex-col items-center justify-center",
+        !nomargin && "mt-24"
+      ]}>
+      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center text-content-primary">
+        The Signs of <b>Operational Drag</b>
+      </h2>
+      <p class="text-lg mt-4 text-content-secondary text-center [text-wrap:pretty] max-w-3xl">
+        It starts slowly. The spreadsheets you built are now creaking under the strain. Small tasks, like paying a batch
+        of suppliers, have become a time-consuming bottleneck. You have a nagging feeling that the numbers in your
+        accounting software don't accurately reflect the real-time health of your business. This isn't a failure; it's a
+        natural consequence of success.
+      </p>
+    </div>
+
+  <div class="grid md:grid-cols-2 py-10 gap-8">
+    <div class="grid place-items-center">
+      <Picture
+        src={FeatureImg1}
+        alt="Stressed finance professional working on manual reconciliation with laptop and paperwork"
+        formats={["avif", "webp"]}
+        loading="lazy"
+        class="rounded-lg shadow-2xl w-full h-auto object-cover"
+      />
+    </div>
+
+    <div class="grid place-items-center">
+      <div class="max-w-lg">
+        <h3 class="text-2xl font-medium mt-4 [text-wrap:balance] text-content-primary">
+          When <span class="text-brand-gold-text">Growth</span> Creates <b>Chaos</b>
+        </h3>
+        <p class="mt-4 text-content-secondary [text-wrap:balance]">
+          As you scale, simple tasks multiply. Manual data entry doesn't just consume time—it introduces costly errors.
+          Reconciling Shopify payouts becomes a weekly headache. Instead of a clear financial picture, you're looking in
+          the rearview mirror, making strategic decisions with outdated information.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 py-10 gap-8">
+    <div class="grid place-items-center pb-10 md:pb-0 md:order-2">
+      <Picture
+        src={FeatureImg2}
+        alt="Finance professional working on laptop in modern office with organised workspace"
+        formats={["avif", "webp"]}
+        loading="lazy"
+        class="rounded-lg shadow-2xl w-full h-auto object-cover"
+      />
+    </div>
+
+    <div class="grid place-items-center">
+      <div class="max-w-lg">
+        <h3 class="text-2xl font-medium mt-4 [text-wrap:balance] text-content-primary">
+          We Build Your <span class="text-brand-gold-text">Financial Engine</span>
+        </h3>
+        <p class="mt-4 text-content-secondary [text-wrap:balance]">
+          Many accountants simply operate software. We architect entire financial systems. By combining deep accounting
+          expertise with systems-thinking, we replace fragile manual workarounds with robust, automated workflows. The
+          result is a single source of truth that delivers real-time business intelligence and the confidence to make
+          bold decisions.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-2 mt-10 gap-8">
+    <Card size="sm" badgeColor="navy">
+      <span slot="title">Diagnose and Strategise</span>
+      <span slot="desc">
+      For leaders feeling the operational strain but needing a clear plan. We perform a deep-dive analysis of your financial workflows to deliver a comprehensive, fixed-price roadmap for scalability.
+      </span>
+    </Card>
+
+    <Card size="sm" badgeColor="gold">
+      <span slot="title">Manage and Scale</span>
+      <span slot="desc">
+        For businesses ready for a proactive partner to run their entire finance function. We take full ownership of your accounts, VAT, and payroll, all managed on the highly efficient systems we build with you.
+      </span>
+    </Card>
+  </div>
+  <div
+    class="mt-8 flex flex-col sm:flex-row sm:justify-center gap-3">
+    <Link href="/how-we-help" style="primary">Explore Our Services</Link>
+  </div>
+  </Container>
+</div>
+
+<Container>
+  <div class="grid md:grid-cols-2 py-10 gap-8">
+    <div class="grid place-items-center">
+      <Picture
+        src={FeatureImg3}
+        alt="Business owner relaxing at desk with hands behind head, smiling confidently in modern home office"
+        formats={["avif", "webp"]}
+        loading="lazy"
+        class="rounded-lg shadow-2xl w-full h-auto object-cover"
+      />
+    </div>
+
+    <div class="grid place-items-center">
+      <div class="max-w-lg">
+        <h3 class="text-2xl font-medium mt-4 [text-wrap:balance] text-content-primary">
+          From Financial Admin to <span class="text-brand-gold-text">Founder</span>
+        </h3>
+        <p class="mt-4 text-content-secondary [text-wrap:balance]">
+          Your time is your most valuable asset. By removing you from the weeds of financial administration, we give you
+          back the headspace to lead. Focus on your product, your customers, and your vision, backed by a financial
+          operation that just works.
+        </p>
+        <Link href="/how-we-help" style="primary" class="inline-flex items-center group gap-px mt-6">See How We Help
+        </Link>
+      </div>
+    </div>
+  </div>
+</Container>

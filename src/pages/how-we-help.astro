@@ -1,0 +1,88 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Card from "@components/card.astro";
+import Link from "@components/ui/link.astro";
+---
+
+<Layout
+  footerMargin={false}
+  title="Your Path from Financial Chaos to Clarity"
+  description="Choose your path: Financial Operations Review for strategic planning, Systems Implementation for expert execution, or Managed Financial Operations for complete delegation."
+>
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">A Clear Path from Financial Chaos to Control</Fragment>
+      <Fragment slot="desc">
+        <div class="max-w-3xl mx-auto">
+          <p class="text-content-primary text-left">Every scaling business reaches a point where its financial
+            foundations feel the strain. The right solution depends on where you are on that journey. Whether you need a
+            strategic plan to fix what's broken, or a trusted partner to manage it all for you, we provide a clear path
+            forward.</p>
+        </div>
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid grid-cols-1 mt-10 pb-16 gap-8 max-w-4xl mx-auto">
+      <Card size="sm">
+        <span slot="title">The Financial Operations Review</span>
+        <div slot="desc">
+          <h3 class="text-xl font-medium mt-4 text-content-primary">Who it's for</h3>
+          <p class="text-content-primary">For founders who are still the bottleneck for payments and approvals. You know
+            your current processes are inefficient and fragile, but you're too deep in the weeds to architect a better
+            system. You need a clear, expert-led plan.</p>
+          <h3 class="text-xl font-medium mt-4 text-content-primary">What it delivers</h3>
+          <p class="text-content-primary">A comprehensive diagnostic report detailing actionable steps for improvement,
+            and
+            a dedicated strategy call to walk you through it. This is your definitive blueprint for building a
+              scalable
+              finance function.</p>
+          <div
+            class="mt-6 flex flex-col sm:flex-row gap-3">
+            <Link href="/financial-operations-review" style="primary">Learn More About the Review</Link>
+          </div>
+        </div>
+      </Card>
+
+      <Card size="sm">
+        <span slot="title">Systems Implementation</span>
+        <div slot="desc">
+          <h3 class="text-xl font-medium mt-4 text-content-primary">Who it's for</h3>
+          <p>This is for businesses that have completed a Financial Operations Review and want our expert team to
+            execute the strategic plan. It is a dedicated, project-based service to build your new financial engine.</p>
+          <h3 class="text-xl font-medium mt-4 text-content-primary">What it delivers</h3>
+          <p>A hands-on, project-based engagement where we roll up our sleeves to build the robust, automated workflows
+            defined in your strategic roadmap. We handle the technical setup, process mapping, and team training
+            to
+            ensure a seamless transition.</p>
+          <div
+            class="mt-6 flex flex-col sm:flex-row gap-3">
+            <Link href="https://helm.fyi/book-an-introductory-call" style="primary">Discuss Your Project</Link>
+          </div>
+        </div>
+      </Card>
+
+      <Card badgeColor="gold" size="sm">
+        <span slot="title">Managed Financial Operations</span>
+        <div slot="desc">
+          <h3 class="text-xl font-medium mt-4 text-content-primary">Who it's for</h3>
+          <p>For founders who have a robust financial engine—or a plan to build one—and are ready for an expert partner
+            to run it. You want to delegate the day-to-day financial management to a proactive team that understands the
+            unique demands of ecommerce.</p>
+          <h3 class="text-xl font-medium mt-4 text-content-primary">What it delivers</h3>
+          <p>Complete ownership of your bookkeeping, VAT, payroll, and accounts. We run everything on the highly
+            efficient
+            systems we build with you, providing real-time insights and freeing your leadership team to focus on
+              growth.</p>
+          <!--<div
+            class="mt-6 flex flex-col sm:flex-row gap-3">
+            <Link href="/contact" style="primary">Explore Our Managed Services</Link>
+          </div>-->
+        </div>
+      </Card>
+    </div>
+  </Container>
+  <Cta />
+</Layout>

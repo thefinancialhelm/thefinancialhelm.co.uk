@@ -7,10 +7,11 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship-pro.web3templates.com",
-  image: {
-    domains: ["unsplash.com", "images.unsplash.com"],
-  },
-  integrations: [tailwind(), mdx(), icon(), sitemap()],
-  adapter: netlify(),
+  site: "https://thefinancialhelm.co.uk",
+  integrations: [tailwind(), mdx(), icon({
+    include: {
+      ph: ["check-circle-fill", "number-circle-one", "number-circle-two", "number-circle-three", "number-circle-four", "invoice", "package", "shopping-bag", "bank", "currency-dollar", "network"]
+    }
+  }), sitemap()],
+  adapter: netlify()
 });

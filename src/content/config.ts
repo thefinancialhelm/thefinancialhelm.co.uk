@@ -12,7 +12,7 @@ const blogCollection = defineCollection({
       alt: z.string(),
     }),
     publishDate: z.coerce.date(),
-    author: z.string().default("Astroship"),
+    author: z.string().default("The Financial Helm"),
     category: z.string(),
     tags: z.array(z.string()),
   }),

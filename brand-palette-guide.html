@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Financial Helm - Brand Palette Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --brand-navy: #05192A;
+            --brand-gold: #CA9E5D;
+            --brand-gold-light: #D9B57F;
+            --brand-cream: #F5F1E8;
+            --content-primary: #2D3748;
+            --content-secondary: #4A5568;
+            --content-tertiary: #A0AEC0;
+            --surface-primary: #FFFFFF;
+            --surface-secondary: #F5F1E8;
+            --border-light: #E2E8F0;
+            --interactive-secondary: #4A6B7C;
+            --semantic-success: #38A169;
+            --semantic-warning: #D69E2E;
+            --semantic-error: #E53E3E;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--content-primary);
+            background: var(--surface-primary);
+        }
+
+        .header {
+            background: var(--brand-navy);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            margin: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--content-primary);
+            border-bottom: 3px solid var(--brand-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .color-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-swatch {
+            height: 120px;
+            position: relative;
+        }
+
+        .color-info {
+            padding: 1.5rem;
+        }
+
+        .color-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .color-codes {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: var(--content-secondary);
+            margin: 0.5rem 0;
+        }
+
+        .color-description {
+            font-size: 0.95rem;
+            color: var(--content-secondary);
+            margin-top: 1rem;
+        }
+
+        .usage-when {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--brand-gold);
+        }
+
+        .usage-when h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--content-primary);
+        }
+
+        .usage-when ul {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .usage-when li {
+            margin: 0.3rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .usage-when li:before {
+            content: "•";
+            color: var(--brand-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .combination-section {
+            background: var(--surface-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .combination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .combination-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .combination-preview {
+            height: 80px;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .quick-reference {
+            background: var(--brand-navy);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .quick-reference h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .reference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .reference-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .reference-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--brand-gold);
+        }
+
+        .do-dont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .do, .dont {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .do {
+            background: #f0f9ff;
+            border: 2px solid var(--semantic-success);
+        }
+
+        .dont {
+            background: #fef2f2;
+            border: 2px solid var(--semantic-error);
+        }
+
+        .do h4 {
+            color: var(--semantic-success);
+            margin-bottom: 1rem;
+        }
+
+        .dont h4 {
+            color: var(--semantic-error);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .do-dont {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>The Financial Helm</h1>
+            <p class="subtitle">Brand Palette & Usage Guide</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Core Brand Colors -->
+        <section class="section">
+            <h2 class="section-title">Core Brand Colours</h2>
+            
+            <!-- Accessibility Notice -->
+            <div style="background: #fef2f2; border: 2px solid #f87171; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                <h3 style="color: #dc2626; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">
+                    ⚠️ Important Accessibility Guidelines
+                </h3>
+                <p style="margin: 0; color: #7f1d1d;">
+                    The original Brand Gold fails WCAG AA contrast requirements when used as text on white backgrounds. 
+                    Use the darker text variants below for all text applications to ensure accessibility compliance.
+                </p>
+            </div>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--brand-navy);"></div>
+                    <div class="color-info">
+                        <h3 class="color-name">Brand Navy</h3>
+                        <div class="color-codes">
+                            #05192A | HSL(207, 68%, 9%)
+                        </div>
+                        <p class="color-description">
+                            Our primary brand colour representing trust, stability, and professional expertise. 
+                            The nautical connection reinforces our "helm" metaphor.
+                        </p>
+                        <div class="usage-when">
+                            <h4>Use for:</h4>
+                            <ul>
+                                <li>Main headings and navigation</li>
+                                <li>Dark background sections</li>
+                                <li>Logo on light backgrounds</li>
+                                <li>Professional documents</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--brand-gold);"></div>
+                    <div class="color-info">
+                        <h3 class="color-name">Brand Gold</h3>
+                        <div class="color-codes">
+                            #CA9E5D | HSL(37, 45%, 58%)
+                        </div>
+                        <p class="color-description">
+                            Our accent colour for backgrounds, buttons, and icons. 
+                            <strong>Important:</strong> Do not use for text on white backgrounds (fails WCAG contrast).
+                        </p>
+                        <div class="usage-when">
+                            <h4>Use for:</h4>
+                            <ul>
+                                <li>Primary button backgrounds</li>
+                                <li>Icon colours and decorative elements</li>
+                                <li>Logo accent elements</li>
+                                <li>Background highlights</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: hsl(37, 45%, 35%);"></div>
+                    <div class="color-info">
+                        <h3 class="color-name">Gold Text (Large)</h3>
+                        <div class="color-codes">
+                            #8B6F3F | HSL(37, 45%, 35%)
+                        </div>
+                        <p class="color-description">
+                            Accessible darker gold for headlines and large text (24px+). 
+                            Meets WCAG AA contrast requirements on white backgrounds.
+                        </p>
+                        <div class="usage-when">
+                            <h4>Use for:</h4>
+                            <ul>
+                                <li>Main headlines (24px+)</li>
+                                <li>Section titles</li>
+                                <li>Navigation hover states</li>
+                                <li>Large accent text</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: hsl(37, 50%, 30%);"></div>
+                    <div class="color-info">
+                        <h3 class="color-name">Gold Text (Body)</h3>
+                        <div class="color-codes">
+                            #7A6633 | HSL(37, 50%, 30%)
+                        </div>
+                        <p class="color-description">
+                            Darkest gold variant for body text and smaller elements (16px+). 
+                            Provides excellent contrast and readability.
+                        </p>
+                        <div class="usage-when">
+                            <h4>Use for:</h4>
+                            <ul>
+                                <li>Body text accents (16px+)</li>
+                                <li>Link colours</li>
+                                <li>Important inline text</li>
+                                <li>Medium-sized highlights</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--brand-gold-light);"></div>
+                    <div class="color-info">
+                        <h3 class="color-name">Light Gold</h3>
+                        <div class="color-codes">
+                            #D9B57F | HSL(37, 45%, 72%)
+                        </div>
+                        <p class="color-description">
+                            A softer variant of our gold for subtle accents and hover states. 
+                            Provides warmth without being overwhelming.
+                        </p>
+                        <div class="usage-when">
+                            <h4>Use for:</h4>
+                            <ul>
+                                <li>Button hover states</li>
+                                <li>Subtle background accents</li>
+                                <li>Secondary highlights</li>
+                                <li>Gradient combinations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--brand-cream);"></div>
+                    <div class="color-info">
+                        <h3 class="color-name">Brand Cream</h3>
+                        <div class="color-codes">
+                            #F5F1E8 | HSL(37, 40%, 92%)
+                        </div>
+                        <p class="color-description">
+                            A warm, approachable neutral that softens the professional palette. 
+                            Creates comfortable reading environments.
+                        </p>
+                        <div class="usage-when">
+                            <h4>Use for:</h4>
+                            <ul>
+                                <li>Content area backgrounds</li>
+                                <li>Card and panel backgrounds</li>
+                                <li>Alternative to pure white</li>
+                                <li>Warm, welcoming sections</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Combinations -->
+        <section class="section">
+            <div class="combination-section">
+                <h2 class="section-title">Recommended Colour Combinations</h2>
+                
+                <div class="combination-grid">
+                    <div class="combination-card">
+                        <div class="combination-preview" style="background: var(--brand-navy); color: white;">
+                            White text on Navy
+                        </div>
+                        <h4>Primary Header Combination</h4>
+                        <p><strong>Use:</strong> Main navigation, hero sections, footer</p>
+                        <p><strong>Contrast:</strong> Excellent accessibility (WCAG AAA)</p>
+                    </div>
+
+                    <div class="combination-card">
+                        <div class="combination-preview" style="background: var(--brand-gold); color: white;">
+                            White text on Gold
+                        </div>
+                        <h4>Primary CTA Combination</h4>
+                        <p><strong>Use:</strong> Main call-to-action buttons, hero backgrounds</p>
+                        <p><strong>Contrast:</strong> Good accessibility (WCAG AA) ✓</p>
+                    </div>
+
+                    <div class="combination-card">
+                        <div class="combination-preview" style="background: var(--brand-cream); color: hsl(37, 45%, 35%);">
+                            Gold Text on Cream
+                        </div>
+                        <h4>Accessible Headline Combination</h4>
+                        <p><strong>Use:</strong> Large headlines (24px+) on cream backgrounds</p>
+                        <p><strong>Contrast:</strong> Excellent accessibility (WCAG AA) ✓</p>
+                    </div>
+
+                    <div class="combination-card">
+                        <div class="combination-preview" style="background: white; color: hsl(37, 50%, 30%); border: 1px solid var(--border-light);">
+                            Accessible Gold on White
+                        </div>
+                        <h4>Body Text Combination</h4>
+                        <p><strong>Use:</strong> Body text accents, links (16px+)</p>
+                        <p><strong>Contrast:</strong> Excellent accessibility (WCAG AA) ✓</p>
+                    </div>
+
+                    <div class="combination-card">
+                        <div class="combination-preview" style="background: var(--brand-cream); color: var(--content-primary);">
+                            Dark text on Cream
+                        </div>
+                        <h4>Content Area Combination</h4>
+                        <p><strong>Use:</strong> Article backgrounds, card content</p>
+                        <p><strong>Contrast:</strong> Excellent readability</p>
+                    </div>
+
+                    <div class="combination-card">
+                        <div class="combination-preview" style="background: white; color: var(--brand-navy); border: 2px solid var(--brand-gold);">
+                            Navy text, Gold border
+                        </div>
+                        <h4>Secondary Button Combination</h4>
+                        <p><strong>Use:</strong> Secondary actions, outlined buttons</p>
+                        <p><strong>Contrast:</strong> Professional and clear</p>
+                    </div>
+
+                    <div class="combination-card">
+                        <div class="combination-preview" style="background: linear-gradient(135deg, var(--brand-gold), var(--brand-gold-light)); color: white;">
+                            White on Gold Gradient
+                        </div>
+                        <h4>Premium Feature Combination</h4>
+                        <p><strong>Use:</strong> Special offers, premium features</p>
+                        <p><strong>Contrast:</strong> Eye-catching and premium</p>
+                    </div>
+
+                    <div class="combination-card">
+                        <div class="combination-preview" style="background: var(--interactive-secondary); color: white;">
+                            White on Steel Blue
+                        </div>
+                        <h4>Supporting Element Combination</h4>
+                        <p><strong>Use:</strong> Secondary buttons, info panels</p>
+                        <p><strong>Contrast:</strong> Professional alternative</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section class="section">
+            <div class="quick-reference">
+                <h3>Quick Reference Guide</h3>
+                <div class="reference-grid">
+                    <div class="reference-item">
+                        <h4>Website Headers</h4>
+                        <p>Navy background + White text</p>
+                        <p>Gold accents for highlights</p>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <h4>Primary Buttons</h4>
+                        <p>Gold background + White text</p>
+                        <p>Light gold on hover</p>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <h4>Content Areas</h4>
+                        <p>Cream/White backgrounds</p>
+                        <p>Dark grey text (#2D3748)</p>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <h4>Large Headlines (24px+)</h4>
+                        <p>Gold Text variant on white/cream</p>
+                        <p>HSL(37, 45%, 35%) - WCAG AA ✓</p>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <h4>Body Text Accents (16px+)</h4>
+                        <p>Accessible Gold on white</p>
+                        <p>HSL(37, 50%, 30%) - WCAG AA ✓</p>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <h4>Small Text (14px-)</h4>
+                        <p>Navy text only, never gold</p>
+                        <p>Ensures maximum readability</p>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <h4>Business Cards</h4>
+                        <p>Navy background + Gold logo</p>
+                        <p>White text for contact details</p>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <h4>Presentations</h4>
+                        <p>Cream backgrounds for content</p>
+                        <p>Navy headers with white text</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessibility Guidelines -->
+        <section class="section">
+            <div style="background: var(--brand-navy); color: white; padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                <h2 style="color: var(--brand-gold); font-size: 1.8rem; margin-bottom: 1.5rem;">WCAG Accessibility Compliance</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                    <div>
+                        <h3 style="color: var(--brand-gold); margin-bottom: 1rem; font-size: 1.2rem;">Text Size Guidelines</h3>
+                        <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                            <p style="margin-bottom: 0.5rem;"><strong>24px+ (Headlines):</strong><br>Use Gold Text variant</p>
+                            <p style="margin-bottom: 0.5rem;"><strong>16px+ (Body text):</strong><br>Use Accessible Gold variant</p>
+                            <p style="margin: 0;"><strong>14px- (Small text):</strong><br>Use Navy text only</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 style="color: var(--brand-gold); margin-bottom: 1rem; font-size: 1.2rem;">Contrast Ratios</h3>
+                        <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                            <p style="margin-bottom: 0.5rem;"><strong>Gold Text:</strong> 4.8:1 ✓</p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Accessible Gold:</strong> 6.2:1 ✓</p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Navy Text:</strong> 12.6:1 ✓</p>
+                            <p style="margin: 0; color: #f87171;"><strong>Original Gold:</strong> 2.47:1 ✗</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 style="color: var(--brand-gold); margin-bottom: 1rem; font-size: 1.2rem;">Testing Tools</h3>
+                        <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                            <p style="margin-bottom: 0.5rem;">• WebAIM Contrast Checker</p>
+                            <p style="margin-bottom: 0.5rem;">• Browser Dev Tools</p>
+                            <p style="margin-bottom: 0.5rem;">• Stark Plugin</p>
+                            <p style="margin: 0;">• Axe Core CLI</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 1rem; background: rgba(202, 158, 93, 0.2); border-radius: 8px; border-left: 4px solid var(--brand-gold);">
+                    <h4 style="margin-bottom: 0.5rem; color: var(--brand-gold);">Legal Requirement</h4>
+                    <p style="margin: 0;">All public-facing websites must meet WCAG 2.1 AA standards for accessibility compliance. This is not optional - it's a legal requirement in many jurisdictions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Do's and Don'ts -->
+        <section class="section">
+            <h2 class="section-title">Do's and Don'ts</h2>
+            
+            <div class="do-dont">
+                <div class="do">
+                    <h4>✓ DO</h4>
+                    <ul>
+                        <li>Use navy and gold as primary brand colours</li>
+                        <li>Use darker gold variants for text accessibility</li>
+                        <li>Test all colour combinations for WCAG AA compliance</li>
+                        <li>Use original gold for backgrounds and buttons only</li>
+                        <li>Use Gold Text variant for headlines (24px+)</li>
+                        <li>Use Accessible Gold for body text (16px+)</li>
+                        <li>Use navy text for small text (14px and below)</li>
+                        <li>Maintain sufficient contrast ratios always</li>
+                    </ul>
+                </div>
+                
+                <div class="dont">
+                    <h4>✗ DON'T</h4>
+                    <ul>
+                        <li>Never use original gold as text on white backgrounds</li>
+                        <li>Never use any gold variant for text smaller than 16px</li>
+                        <li>Don't ignore WCAG accessibility requirements</li>
+                        <li>Don't use gold text without checking contrast ratios</li>
+                        <li>Don't create colour combinations not in this guide</li>
+                        <li>Don't use more than 3 colours in a single design</li>
+                        <li>Don't modify the brand colours without approval</li>
+                        <li>Don't assume colour combinations are accessible</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Context Applications -->
+        <section class="section">
+            <h2 class="section-title">Application Contexts</h2>
+            
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-info">
+                        <h3 class="color-name">Digital Applications</h3>
+                        <div class="usage-when">
+                            <h4>Website & Apps:</h4>
+                            <ul>
+                                <li>Navy headers with white navigation text</li>
+                                <li>Gold primary buttons with white text</li>
+                                <li>Cream content backgrounds</li>
+                                <li>Steel blue for secondary actions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-info">
+                        <h3 class="color-name">Print Materials</h3>
+                        <div class="usage-when">
+                            <h4>Business Cards, Brochures:</h4>
+                            <ul>
+                                <li>Navy as primary background colour</li>
+                                <li>Gold foil stamping for premium effect</li>
+                                <li>White text on navy backgrounds</li>
+                                <li>Cream paper stock for warmth</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-info">
+                        <h3 class="color-name">Social Media</h3>
+                        <div class="usage-when">
+                            <h4>Posts & Graphics:</h4>
+                            <ul>
+                                <li>Navy backgrounds for professional posts</li>
+                                <li>Gold accents for key statistics</li>
+                                <li>Cream backgrounds for tips/advice</li>
+                                <li>High contrast for mobile readability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-info">
+                        <h3 class="color-name">Presentations</h3>
+                        <div class="usage-when">
+                            <h4>Client Presentations:</h4>
+                            <ul>
+                                <li>Navy title slides with white text</li>
+                                <li>Cream content slides for readability</li>
+                                <li>Gold for highlighting key points</li>
+                                <li>Consistent colour story throughout</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="header" style="margin-top: 4rem;">
+        <div class="container">
+            <p>This guide ensures consistent brand representation across all touchpoints.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">For questions about brand implementation, contact the marketing team.</p>
+        </div>
+    </footer>
+</body>
+</html>

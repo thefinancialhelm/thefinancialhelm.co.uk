@@ -4,36 +4,21 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { StickyHeader, Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Image } from "astro:assets";
+import emblem from "@assets/emblem.svg";
 
 const menuitems = [
   {
-    title: "Pages",
-    path: "#",
-    children: [
-      { title: "Features", path: "/features" },
-      { title: "Integrations", path: "/integrations" },
-      {
-        title: "Blog Details",
-        path: "/blog//typography-example",
-      },
-      { title: "404 Page", path: "/404" },
-    ],
+    "title": "<span><b class='text-brand-gold-text'>How</b> We Help</span>",
+    "path": "how-we-help",
   },
   {
-    title: "Pricing",
-    path: "/pricing",
+    "title": "<span><b class='text-brand-gold-text'>Who</b> We Help</span>",
+    "path": "who-we-help",
   },
   {
-    title: "About",
-    path: "/about",
-  },
-  {
-    title: "Blog",
-    path: "/blog",
-  },
-  {
-    title: "Contact",
-    path: "/contact",
+    "title": "<span><b class='text-brand-gold-text'>About</b> Us</span>",
+    "path": "about-us",
   },
 ];
 ---
@@ -51,10 +36,13 @@ const menuitems = [
           <div class="flex w-full lg:w-auto items-center justify-between">
             <a
               href="/"
-              class="text-lg flex items-center transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-interactive-primary focus-visible:outline-none rounded-full px-2 -ml-2"
-              ><span class="font-bold text-brand-navy">The Financial</span><span
-                class="text-brand-gold-text font-bold"> Helm</span
+              class="flex items-center gap-2 transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-interactive-primary focus-visible:outline-none rounded-full px-2 -ml-2"
               >
+              <Image src={emblem} alt="" class="h-10 w-10" />
+              <span class="text-lg">
+                <span class="font-bold text-brand-navy">The Financial</span>
+                <span class="text-brand-gold-text font-bold"> Helm</span>
+              </span>
             </a>
             <div class="block lg:hidden">
               <MenuIcon class="w-4 h-4 text-content-primary" />
@@ -78,7 +66,7 @@ const menuitems = [
                         <a
                           href={item.path}
                           class="flex lg:px-3 py-2 text-sm text-content-secondary hover:text-brand-gold-text transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-interactive-primary focus-visible:outline-none rounded-full">
-                          {item.title}
+                          <Fragment set:html={item.title} />
                         </a>
                       </li>
                     )}
@@ -87,76 +75,22 @@ const menuitems = [
               }
             </ul>
             <div class="lg:hidden flex items-center mt-3 gap-4">
-              <Link href="#" style="muted" block size="md">Log in</Link>
-              <Link href="#" size="md" block>Try for Free</Link>
+              <Link href="https://helm.fyi/book-an-introductory-call" size="md" block>
+                Book a No-Obligation Discovery Call
+              </Link>
             </div>
           </MenuItems>
         </Astronav>
         <div>
           <div class="hidden lg:flex items-center gap-4">
-            <a
-              href="#"
-              class="text-sm px-2 py-1 transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-interactive-primary focus-visible:outline-none rounded-full"
-              >Log in</a
-            >
             <Link
-              href="#"
+              href="https://helm.fyi/book-an-introductory-call"
               size="sm"
               class="inline-flex items-center group gap-px">
-              <span>Try for Free</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="w-4 h-4 mt-px group-hover:translate-x-1 transition-transform">
-                <path
-                  fill-rule="evenodd"
-                  d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                  clip-rule="evenodd"></path>
-              </svg>
+              <span>Book a No-Obligation Discovery Call</span>
             </Link>
           </div>
         </div>
       </div>
     </Container>
   </StickyHeader>
-
-<!--
-<script>
-  // @ts-nocheck
-  let lastKnownScrollPosition = 0;
-  let ticking = false;
-  const header = document.querySelector(".astronav-sticky-header");
-  const animDiv = header.querySelector(".padding-anim");
-  const defaultClass = "py-[20px] border-transparent";
-  const activeClass = "py-[8px] bg-white border-gray-200";
-
-  // Define two different scroll positions
-  const addScrollY = 100;   // Scroll position to add active class
-  const removeScrollY = 50; // Scroll position to remove active class
-
-  function updateAnimation(scrollPos) {
-    if (scrollPos > addScrollY) {
-      animDiv.classList.remove(...defaultClass.split(" "));
-      animDiv.classList.add("is-active", ...activeClass.split(" "));
-      animDiv.setAttribute("active", "");
-    } else if (scrollPos < removeScrollY) {
-      animDiv.classList.remove("is-active", ...activeClass.split(" "));
-      animDiv.classList.add(...defaultClass.split(" "));
-      animDiv.removeAttribute("active");
-    }
-  }
-
-  window.addEventListener("scroll", function () {
-    lastKnownScrollPosition = window.scrollY;
-
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        updateAnimation(lastKnownScrollPosition);
-        ticking = false;
-      });
-
-      ticking = true;
-    }
-  });
-</script> -->

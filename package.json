@@ -1,5 +1,5 @@
 {
-  "name": "astroship",
+  "name": "thefinancialhelm",
   "type": "module",
   "version": "2.2.0",
   "private": true,
@@ -16,10 +16,8 @@
     "@astrojs/netlify": "^6.5.11",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
-    "@iconify-json/bx": "^1.2.2",
-    "@iconify-json/fluent": "^1.2.31",
+    "@iconify-json/iconoir": "^1.2.9",
     "@iconify-json/ph": "^1.2.2",
-    "@iconify-json/uil": "^1.2.3",
     "astro": "^5.13.9",
     "astro-feather-icons": "^1.0.2",
     "astro-icon": "^1.1.5",

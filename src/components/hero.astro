@@ -1,13 +1,13 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "../assets/hero-screenshot.png";
+import heroImage from "../assets/hero.jpg";
 import Link from "@components/ui/link.astro";
 import Container from "@components/container.astro";
 ---
 
-<div class="overflow-x-clip">
+<div class="overflow-hidden 2xl:overflow-visible">
   <Container>
-    <main class="grid lg:grid-cols-5 place-items-center relative">
+    <main class="grid lg:grid-cols-12 gap-8 items-center relative py-8 lg:py-12">
       <div
         class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-brand-gold/20 right-0 top-0">
       </div>
@@ -15,40 +15,37 @@ import Container from "@components/container.astro";
         class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-brand-navy/10 right-56 top-10">
       </div>
 
-      <div class="max-w-sm md:max-w-max lg:col-span-2">
+      <div class="lg:col-span-5 w-full 2xl:-ml-20">
         <h1
           class="text-3xl lg:text-4xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter [text-wrap:balance] text-center lg:text-start text-content-primary">
-          Take Control of Your <span class="text-brand-gold">Financial Operations</span>
+          Is Your Growth Outpacing Your Financial Processes?
         </h1>
         <p
-          class="text-lg mt-4 max-w-lg text-content-secondary [text-wrap:balance] text-center lg:text-start">
-          Stop letting broken processes dictate your potential. The Financial Helm builds scalable financial operations that grow with your business.
+          class="text-lg mt-6 text-content-secondary [text-wrap:balance] text-center lg:text-start">
+          We architect scalable financial operations for ambitious UK ecommerce businesses. Move from being the
+          bottleneck in your finances to being in <span class="text-brand-gold-text">complete control</span>.
         </p>
         <div
-          class="mt-6 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-3">
+          class="mt-8 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-3">
           <Link
-            href="/contact"
+            style="primary"
+            size="xl"
+            href="https://helm.fyi/book-an-introductory-call"
             class="flex gap-1 items-center justify-center">
-            Book Your Financial Operations Review
-          </Link>
-          <Link
-            size="lg"
-            style="outline"
-            href="/about"
-            class="flex gap-1 items-center justify-center">
-            Learn More
+            Discover Your Path to Clarity
           </Link>
         </div>
       </div>
-      <div class="py-3 lg:col-span-3 lg:-mr-44">
+      <div class="lg:col-span-7 2xl:-mr-20">
         <Picture
           src={heroImage}
-          alt="Astronaut in the air"
+          alt="Frustrated professional at laptop surrounded by cluttered paperwork and office supplies"
           formats={["avif", "webp"]}
-          sizes="(max-width: 1024px) 100vw, 50vw"
+          sizes="(max-width: 1024px) 100vw, 60vw"
           widths={[240, 540, 720, heroImage.width]}
           loading="eager"
           fetchpriority="high"
+          class="rounded-lg shadow-2xl w-full h-auto object-cover aspect-[4/3]"
         />
       </div>
     </main>

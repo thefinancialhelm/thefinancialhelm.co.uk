@@ -1,0 +1,186 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Layout from "@layouts/Layout.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import { Icon } from "astro-icon/components";
+import Link from "@components/ui/link.astro";
+---
+
+<Layout
+  footerMargin={false}
+  title="Your Business Magazine Offer"
+  description="Exclusive 20% discount on Financial Operations Review for Your Business magazine readers. Transform your finance function from firefighting to strategic growth engine."
+  noindex={true}
+>
+  <Container class="mt-16">
+    <Sectionhead>
+      <Fragment slot="title">Your Business is Scaling. <span class="text-brand-gold-text block mt-1">Is Your Finance Function Keeping Up?</span></Fragment>
+      <Fragment slot="desc">
+        <div class="max-w-3xl mx-auto">
+          <p class="text-lg text-content-primary font-bold">The strategic roadmap for ambitious founders, as featured in <em>Your Business</em> magazine. Move from financial firefighting to a clear, scalable system that fuels your growth.</p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="https://helm.fyi/book-an-introductory-call" style="primary">Claim Your 20% Discount</Link>
+          </div>
+        </div>
+      </Fragment>
+    </Sectionhead>
+  </Container>
+
+  <div class="bg-surface-secondary py-16 my-16">
+    <Container>
+      <Sectionhead>
+        <Fragment slot="title">Five Signs You’ve Outgrown Your Financial Processes</Fragment>
+        <Fragment slot="desc">
+          <div class="max-w-3xl mx-auto">
+            <p class="text-content-primary mt-4 text-left">If you're a business owner with a turnover of around £500k or more, these red flags might feel familiar.</p>
+            <ul class="grid mt-4 text-left gap-y-4">
+              <li class="flex items-start gap-3 text-content-primary">
+                <Icon name="ph:check-circle-fill" class="w-6 h-6 flex-shrink-0" />
+                <span><b>You spend more time on bookkeeping than strategy.</b> You're bogged down in the day-to-day numbers instead of focusing on growth.</span>
+              </li>
+              <li class="flex items-start gap-3 text-content-primary">
+                <Icon name="ph:check-circle-fill" class="w-6 h-6 flex-shrink-0" />
+                <span><b>Cash flow is a constant worry.</b> You're profitable on paper, but you lack a clear, up-to-date picture of your cash position.</span>
+              </li>
+              <li class="flex items-start gap-3 text-content-primary">
+                <Icon name="ph:check-circle-fill" class="w-6 h-6 flex-shrink-0" />
+                <span><b>Your data is always out of date.</b> You can't get accurate reports quickly enough to make timely, informed business decisions.</span>
+              </li>
+              <li class="flex items-start gap-3 text-content-primary">
+                <Icon name="ph:check-circle-fill" class="w-6 h-6 flex-shrink-0" />
+                <span><b>Manual data entry is causing errors.</b> Time is wasted correcting mistakes from manually inputting data from bills, receipts, or sales channels.</span>
+              </li>
+              <li class="flex items-start gap-3 text-content-primary">
+                <Icon name="ph:check-circle-fill" class="w-6 h-6 flex-shrink-0" />
+                <span><b>Your processes feel like they are breaking.</b> The systems that worked when you were smaller are now inefficient and creating bottlenecks.</span>
+              </li>
+            </ul>
+          </div>
+        </Fragment>
+      </Sectionhead>
+    </Container>
+  </div>
+
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Your Roadmap to a Scalable Finance Function</Fragment>
+      <Fragment slot="desc">
+        <div class="max-w-3xl mx-auto">
+          <p class="text-content-primary text-left">If those points resonate, you are not alone. This is a classic sign that your business's operational engine can no longer keep pace with its success. You've become the de facto finance director—a role that steals your focus from strategy, innovation, and leading your team.</p>
+          <p class="text-content-primary mt-4 text-left">The Financial Operations Review is the definitive first step to regaining control. It’s a comprehensive diagnostic of your entire financial workflow that delivers a clear, expert-led plan to fix what's broken and build a system that's ready for your ambition.</p>
+        </div>
+      </Fragment>
+    </Sectionhead>
+  </Container>
+
+  <div class="bg-surface-secondary py-16 my-16">
+    <Container>
+      <Sectionhead>
+        <Fragment slot="title">Our Four-Step Diagnostic Process</Fragment>
+        <Fragment slot="desc">
+          <div class="max-w-3xl mx-auto">
+            <p class="text-content-primary text-left">Before you can build, you need a blueprint. We provide an objective, expert view of what’s working, what’s broken, and what’s about to break.</p>
+            <ul class="grid mt-4 text-left gap-y-4">
+              <li class="flex items-start gap-3 text-content-primary">
+                <Icon name="ph:number-circle-one" class="w-7 h-7 flex-shrink-0" />
+                <span><b class="block">The Deep Dive Discovery</b>We start by listening. In confidential sessions with you and your key stakeholders, we seek to understand your current processes, your technology, and the specific frustrations you're experiencing day-to-day.</span>
+              </li>
+              <li class="flex items-start gap-3 text-content-primary">
+                <Icon name="ph:number-circle-two" class="w-7 h-7 flex-shrink-0" />
+                <span><b class="block">Workflow and Systems Analysis</b>We go beyond the surface level, engaging with your team to map out the real-world flow of data and money. We trace the journey from a customer's click to cash in the bank, uncovering the hidden inefficiencies and risks along the way.</span>
+              </li>
+              <li class="flex items-start gap-3 text-content-primary">
+                <Icon name="ph:number-circle-three" class="w-7 h-7 flex-shrink-0" />
+                <span><b class="block">The Strategic Roadmap Report</b>We compile our findings into a detailed, plain-English report. We document your current state and provide a clear set of prioritised, actionable recommendations for improvement.</span>
+              </li>
+              <li class="flex items-start gap-3 text-content-primary">
+                <Icon name="ph:number-circle-four" class="w-7 h-7 flex-shrink-0" />
+                <span><b class="block">The Findings Presentation</b>We walk you through our findings and recommendations in a final strategy call. This is an open forum for you and your stakeholders to ask questions, challenge assumptions, and gain complete clarity on the path forward.</span>
+              </li>
+            </ul>
+          </div>
+        </Fragment>
+      </Sectionhead>
+    </Container>
+  </div>
+
+  <Container class="pb-16">
+    <Sectionhead>
+      <Fragment slot="title">What You Get: Your Blueprint for Scale</Fragment>
+      <Fragment slot="desc">
+        <div class="max-w-3xl mx-auto">
+          <p class="text-lg text-content-primary mt-4 text-left">This isn't just a report; it's a comprehensive, actionable plan that empowers you to build a finance function that can support your ambition.</p>
+
+          <h2 class="text-content-primary text-lg font-bold mt-8 text-left">1. The Financial Operations Report</h2>
+          <p class="text-content-primary text-left">A detailed document providing:</p>
+          <ul class="grid mt-4 text-left gap-y-4">
+            <li class="flex items-start gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-6 h-6 flex-shrink-0" />
+              <span><b>Current State Analysis:</b> A clear summary of your existing financial workflows, systems, and team structure</span>
+            </li>
+            <li class="flex items-start gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-6 h-6 flex-shrink-0" />
+              <span><b>Bottleneck Identification:</b> Pinpointing the exact areas causing operational drag, risk, and inefficiency</span>
+            </li>
+            <li class="flex items-start gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-6 h-6 flex-shrink-0" />
+              <span><b>Technology Stack Review:</b> An assessment of your current tools (Xero, Shopify, etc.) and how effectively they are being used</span>
+            </li>
+            <li class="flex items-start gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-6 h-6 flex-shrink-0" />
+              <span><b>Actionable Recommendations:</b> A prioritised list of strategic and tactical improvements, from "quick wins" to larger foundational projects</span>
+            </li>
+          </ul>
+
+          <h2 class="text-content-primary text-lg font-bold mt-8 text-left">2. The Strategy and Q&A Session</h2>
+          <p class="text-content-primary text-left">A 90-minute call where we present the report, answer any questions from your team, and ensure you have complete confidence in the recommended path forward.</p>
+        </div>
+      </Fragment>
+    </Sectionhead>
+  </Container>
+
+  <div class="bg-surface-secondary py-16 my-16">
+    <Container>
+      <Sectionhead>
+        <Fragment slot="title">A Modern Partner for Modern Business</Fragment>
+        <Fragment slot="desc">
+          <div class="max-w-3xl mx-auto">
+            <p class="text-content-primary text-left">At The Financial Helm, we are not your traditional, stuffy accountants. Founded by an expert accountant, Emma, and a software development specialist, Stuart, our practice was born from the idea that modern businesses need a modern financial partner who understands both numbers and technology.</p>
+            <p class="text-content-primary mt-4 text-left">This deep technical expertise means we don't just use the best software on the market; we supercharge it. We’ve developed our own custom automation tools—from a bank reconciliation bot named "Otto" to bespoke workflows that use AI—to build a streamlined finance function that runs smoothly in the background. The result is what you need most: clear, accurate, and timely data to drive sustainable growth.</p>
+          </div>
+        </Fragment>
+      </Sectionhead>
+    </Container>
+  </div>
+
+  <Container class="pb-16">
+    <Sectionhead>
+      <Fragment slot="title">Claim Your Exclusive 20% Discount</Fragment>
+      <Fragment slot="desc">
+        <div class="max-w-3xl mx-auto">
+          <p class="text-lg text-content-primary font-bold">As a reader of <em>Your Business</em> magazine, you are entitled to a 20% discount on the fixed-fee price of your Financial Operations Review.</p>
+          <p class="text-content-primary mt-4 text-left">The next step is a no-obligation scoping call where we'll ask some targeted questions about your operations to understand your specific needs. This allows us to provide a firm, fixed-fee quote for you to consider, with no obligation to proceed. Your discount will be applied to this quote.</p>
+          <h2 class="text-content-primary text-lg font-bold mt-8 text-left">A Clear Investment in Your Future</h2>
+          <p class="text-content-primary mt-4 text-left">To give you an idea of the investment (before your 20% discount is applied), here are some typical examples:</p>
+          <ul class="grid mt-4 text-left gap-y-4">
+            <li class="flex items-start gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-6 h-6 flex-shrink-0" />
+              <span>For a UK-based Shopify store with around £1M in turnover using Stripe and PayPal, the investment for a review is typically around £3,500 + VAT</span>
+            </li>
+            <li class="flex items-start gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-6 h-6 flex-shrink-0" />
+              <span>For a multi-channel retailer with £3M in turnover, selling in the UK and EU with inventory complexity, the investment is typically around £5,500 + VAT</span>
+            </li>
+            <li class="flex items-start gap-3 text-content-primary">
+              <Icon name="ph:check-circle-fill" class="w-6 h-6 flex-shrink-0" />
+              <span>For a larger £5M+ business with international sales, multiple currencies, and wholesale/D2C arms, the investment typically starts from £7,500 + VAT</span>
+            </li>
+          </ul>
+        </div>
+      </Fragment>
+    </Sectionhead>
+  </Container>
+
+  <Cta />
+</Layout>

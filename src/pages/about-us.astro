@@ -1,0 +1,122 @@
+---
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Compass from "../assets/compass.jpg";
+import Cta from "@components/cta.astro";
+---
+
+<Layout
+  title="About Us"
+  description="Meet the founders of The Financial Helm. A modern accountancy practice built by an expert accountant and technology specialist to close the gap between numbers and operations."
+  footerMargin={false}
+>
+  <Container class="mt-16">
+    <Sectionhead>
+      <Fragment slot="title">We Believe Your Finance Function Should Be Your Strongest Asset, Not Your Biggest
+        Bottleneck
+      </Fragment>
+      <Fragment slot="desc">
+        <div class="max-w-3xl mx-auto">
+          <p class="text-content-primary">
+            The Financial Helm was founded on a simple observation: most growing businesses are held back by a critical
+            gap between their accounting and their day-to-day operations. The numbers are handled by one person, the
+            systems by another, and the founder is left trying to bridge the divide.
+          </p>
+          <p class="text-content-primary font-bold mt-4">
+            We exist to close that gap for good.
+          </p>
+        </div>
+      </Fragment>
+    </Sectionhead>
+  </Container>
+
+  <div class="bg-surface-secondary py-16 my-16">
+    <Container>
+      <div class="grid sm:grid-cols-2 gap-10 mx-auto">
+        <div class="relative">
+          <div
+            class="absolute hidden md:block w-96 h-96 bg-brand-gold/10 rounded-full right-0 top-1/3 -z-10">
+          </div>
+          <div
+            class="absolute hidden md:block w-44 h-44 bg-brand-navy/10 rounded-full left-10 top-1/4 -z-10">
+          </div>
+          <Picture
+            formats={["avif", "webp"]}
+            src={Compass}
+            alt="Marine compass on boat dashboard with sunlit water in background"
+            class="rounded-xl w-full max-w-md mx-auto shadow-2xl"
+            loading="lazy"
+          />
+        </div>
+        <div class="place-self-center">
+          <h2 class="text-5xl text-content-primary tracking-tight -mt-2">
+            Two Perspectives, One Solution
+          </h2>
+          <p class="text-lg max-w-xl mt-4 leading-relaxed text-content-secondary">
+            For years, from two different professional worlds, we saw the same problem from opposite sides.
+          </p>
+          <h2 class="text-content-primary text-lg font-bold mt-6 text-left">The Accountant's View</h2>
+          <p class="max-w-xl mt-2 leading-relaxed text-content-secondary">
+            As an expert accountant, Emma saw the consequences of broken systems every day. She worked with ambitious
+            founders who had brilliant products and impressive growth, but whose financial operations were held together
+            by fragile spreadsheets, manual data entry, and sheer willpower. This "creeping chaos" led to delayed
+            decisions, unclear profitability, and founders who were trapped working in their business, not on it.
+          </p>
+          <h2 class="text-content-primary text-lg font-bold mt-6 text-left">The Technologist's View</h2>
+          <p class="max-w-xl mt-2 leading-relaxed text-content-secondary">
+            As a tech automation specialist, Stuart saw the other side of the coin. He saw powerful, accessible
+            technology
+            that could eliminate these bottlenecks, but it was often poorly implemented or completely overlooked by
+            traditional finance professionals. The potential for efficiency was huge, but it required a systems-thinking
+            mindset that most accountants simply didn't have.
+          </p>
+          <p class="max-w-xl mt-2 leading-relaxed text-content-secondary">
+            <b>The Financial Helm was born when we realised the solution wasn't just better accounting or smarter
+              tech—it
+              was
+              the seamless integration of both.</b> We built a new kind of accountancy practice, one that architects the
+            operational engine that powers our clients' growth.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <Container class="pb-16">
+    <div class="mt-24 max-w-3xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center text-content-primary">
+        Meet the Founders
+      </h2>
+      <h2 class="text-content-primary text-lg font-bold mt-8 text-left">Emma James | Co-Founder</h2>
+      <p class="mt-2 leading-relaxed text-content-secondary">
+        Emma is the accountant and financial strategist. With over 10 years of experience, she ensures every system we
+        build is rooted in robust, compliant accounting principles. Her aim is to empower founders, by transforming
+        financial data from a historical record into a powerful tool for real-time, forward-looking decision-making. She
+        is the architect of your financial clarity.
+      </p>
+      <h2 class="text-content-primary text-lg font-bold mt-8 text-left">Stuart Chapman | Co-Founder</h2>
+      <p class="mt-2 leading-relaxed text-content-secondary">
+        Stuart is the systems specialist. He translates complex operational challenges into elegant, automated
+        workflows. With a background in software development, having worked with The University of Cambridge and The
+        Economist, amongst others, he ensures that the technology we implement is perfectly tailored to streamline and
+        automate your processes. He is the engineer of your financial efficiency.
+      </p>
+    </div>
+
+    <div class="mt-24 max-w-3xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center text-content-primary">
+        Our Mission is Simple
+      </h2>
+      <p class="text-xl mt-6 leading-relaxed text-content-primary font-bold">
+        To move business owners from being a bottleneck in their finances to being in control of them.
+      </p>
+      <p class="mt-4 leading-relaxed text-content-primary">
+        We replace outdated, manual processes with streamlined systems that provide clarity, eliminate operational drag,
+        and free up ambitious leaders to focus on what they do best: scaling their company.
+      </p>
+    </div>
+  </Container>
+  <Cta />
+</Layout>

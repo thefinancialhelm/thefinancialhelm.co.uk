@@ -2,47 +2,54 @@
 import Badge from "@components/ui/badge.astro";
 
 interface Props {
-  color?: Color;
-  size?: string;
+  badgeColor?: Color;
+  size?: "sm"|"md";
   class?: string;
 }
 
-const { color = "DEFAULT", size = "md", class: className } = Astro.props;
+const {
+  badgeColor = "DEFAULT",
+  size = "md",
+  class: className
+} = Astro.props;
 
 const colors = {
   DEFAULT: "bg-surface-secondary",
   gold: "bg-brand-gold/5",
   navy: "bg-brand-navy/5",
-  indigo: "bg-indigo-50",
-  purple: "bg-purple-50",
 };
 type Color = keyof typeof colors;
 ---
 
 <div
   class:list={[
-    "rounded-2xl p-8 bg-surface-secondary transition-all ring-1 ring-border-light shadow hover:shadow-lg",
+    "rounded-2xl p-8 transition-all ring-1 ring-border-light shadow hover:shadow-lg",
+    colors[badgeColor],
     className,
   ]}>
-  <div
-    class:list={[
-      "overflow-hidden flex items-start justify-center h-auto relative",
-      size === "sm" ? "lg:h-60" : "lg:h-80",
-    ]}>
-    <div
-      class="absolute inset-0 bg-gradient-to-t from-surface-secondary via-transparent z-10">
-    </div>
-    <slot name="image" />
-  </div>
+  {
+    Astro.slots.has("image") && (
+      <div
+        class:list={[
+          "overflow-hidden flex items-start justify-center h-auto relative",
+          size === "sm" ? "lg:h-60" : "lg:h-80"
+        ]}>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-surface-secondary via-transparent z-10">
+        </div>
+        <slot name="image" />
+      </div>
+    )
+  }
   <div class="mt-2">
     {
       Astro.slots.has("badge") && (
-        <Badge color={color}>
+        <Badge color={badgeColor}>
           <slot name="badge" />
         </Badge>
       )
     }
     <h3 class="text-xl lg:text-2xl font-medium mt-2 text-content-primary"><slot name="title" /></h3>
-    <p class="text-content-secondary mt-2 [text-wrap:balance]"><slot name="desc" /></p>
+    <p class="text-content-secondary mt-2"><slot name="desc" /></p>
   </div>
 </div>

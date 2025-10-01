@@ -41,8 +41,7 @@ import Container from "@components/container.astro";
           src={heroImage}
           alt="Frustrated professional at laptop surrounded by cluttered paperwork and office supplies"
           formats={["avif", "webp"]}
-          sizes="(max-width: 1024px) 100vw, 60vw"
-          widths={[240, 540, 720, heroImage.width]}
+          layout="full-width"
           loading="eager"
           fetchpriority="high"
           class="rounded-lg shadow-2xl w-full h-auto object-cover aspect-[4/3]"
